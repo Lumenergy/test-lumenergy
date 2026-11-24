@@ -273,7 +273,18 @@ header.page-header,
 header.page-header h1::after,.hero-title::after,
 .section-title:not(.center)::before { background:var(--gold-muted); }
 
-/* The illumination effect is strongest when a visitor interacts. */
+.founder .headshot {
+  margin-top: 1.2rem;
+}
+
+/* Remove extra spacing on mobile */
+@media (max-width: 540px) {
+  .founder .headshot {
+    margin-top: 0;
+  }
+}
+
+/* illumination effect */
 .card,.deliverable-tile,.highlight-link,.cta,.button-glow {
   transition:transform .22s ease, box-shadow .25s ease, border-color .22s ease, background .22s ease;
 }
@@ -313,7 +324,6 @@ header.page-header h1::after,.hero-title::after,
 }
 footer.container { background:#2d1b4e !important; }
 
-/* Editorial photographs replace the three labeled boxes on What We Do. */
 .feature-banner {
   border:1px solid rgba(45,27,78,.12);
   box-shadow:0 12px 30px rgba(45,27,78,.055);
