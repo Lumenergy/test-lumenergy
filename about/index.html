@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | Lumenergy LLC</title>
+  <meta name="description" content="About Lumenergy LLC and founder Maia Leroy." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --deep:#2D1B4E;
+      --violet:#6D28D9;
+      --lav:#C084FC;
+      --gold:#FACC15;
+      --pearl:#F9FAFB;
+      --graphite:#111827;
+      --glow:#FFFAD2;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+    }
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      color: var(--pearl);
+      background: linear-gradient(90deg, #0E1745 0%, #4523B2 45%, #8A2FFF 100%),
+            radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 70%);
+      background-attachment: fixed;
+      background-size: cover;
+      line-height: 1.6;
+    }
+    a { color: var(--pearl); text-decoration: none; }
+    img, svg, video, iframe { max-width: 100%; height: auto; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.2rem; }
+
+    /* Nav */
+    .nav{
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(6px) saturate(140%);
+      background: linear-gradient(180deg, rgba(45,27,78,0.6), rgba(45,27,78,0.3));
+      border-bottom: 1px solid rgba(250,252,255,0.08);
+    }
+    .nav-inner{ display:flex; align-items:center; gap:1rem; padding:0.8rem 0; }
+    .brand { font-weight:300; letter-spacing:1px; }
+    .brand .star{ color:var(--gold); text-shadow:0 0 10px rgba(250,204,21,0.8), 0 0 24px rgba(255,250,210,0.6); }
+    .nav a{
+      font-weight:300; letter-spacing:.5px;
+      color:var(--pearl); opacity:.9; margin-left:0;
+      transition: color .2s ease, text-shadow .25s ease, opacity .2s ease;
+    }
+    .nav a:hover, .nav a:focus-visible{
+      color:var(--glow); opacity:1;
+      text-shadow:0 0 10px rgba(255,250,210,0.9), 0 0 30px rgba(255,250,210,0.55), 0 0 60px rgba(255,250,210,0.35);
+      outline:none;
+    }
+    .nav a[aria-current="page"]{
+      color: var(--glow);
+      opacity: 1;
+      text-shadow:
+        0 0 10px rgba(255,250,210,.9),
+        0 0 30px rgba(255,250,210,.55),
+        0 0 60px rgba(255,250,210,.35);
+    }
+    .nav-links{ margin-left:auto; display:flex; align-items:center; flex-wrap:wrap; gap:.75rem; }
+    
+
+@media (max-width:900px){
+  .nav-inner{ flex-wrap:wrap; gap:.5rem; }
+  .brand{ flex:1 0 100%; text-align:center; }
+  .nav-links{
+    width:100%;
+    justify-content:center;
+    margin-left:0;
+  }
+}
+
+@media (max-width:640px){
+  .nav-inner{ flex-wrap:wrap; gap:.25rem; }
+  .brand{ flex:1 0 100%; text-align:center; }
+  .nav-links{
+    width:100%;
+    justify-content:center;
+    margin-left:0;
+    column-gap: .2rem;
+    row-gap: .2rem;
+  }
+  .nav-links a{
+    font-size:.9rem;
+    letter-spacing:.3px;
+    margin-left:0;
+    padding:.25rem .4rem;
+    display:inline-block;
+    text-align:center;
+    white-space:normal;
+    line-height:1.25;
+  }
+}
+
+    header.page-header { padding: 1.5rem 0 1.5rem; text-align:center; }
+    .glow-text{
+      color: var(--glow);
+      text-shadow: 0 0 6px rgba(255,250,210,0.8), 0 0 15px rgba(255,250,210,0.4), 0 0 25px rgba(255,250,210,0.2);
+    }
+.section-intro{ max-width:760px; margin:0 auto 2rem; opacity:.95; text-align: center;}
+
+    .section-title{
+      font-family:'Raleway', sans-serif;
+      font-weight:600;
+      text-align:left;
+      margin:0 0 1.2rem;
+    }
+    .section-title.center{
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 1.2rem;
+    }
+    .section-subtitle{
+      text-align: center;
+      max-width: 900px;
+      margin: 0.3rem auto 1.8rem;
+      line-height: 1.65;
+    }
+
+    .grid { display: grid; gap: 1.2rem; margin-bottom: 2.5rem; }
+    @media (min-width: 900px){ .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
+
+    .card{
+      position: relative;
+      background: rgba(17, 10, 32, .55);
+      border: 1px solid rgba(192,132,252,.25);
+      border-radius: 18px; padding: 1.2rem;
+      transition: .25s ease;
+      box-shadow: 0 0 0 rgba(250,204,21,0);
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      border-color: rgba(250,204,21,.45);
+      box-shadow:
+        0 0 10px rgba(250,204,21,.35),
+        0 0 30px rgba(250,204,21,.25),
+        0 0 60px rgba(250,204,21,.15);
+    }
+    .card h3{ margin:.2rem 0 .6rem; }
+    .muted {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      color: #e8defa;
+      opacity: .9;
+    }
+    .founder{ display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: start; }
+    .headshot{
+      width: 120px; height: 120px; border-radius: 14px; object-fit: cover;
+      border: 0px solid rgba(255,255,255,.1);
+      box-shadow: 0 4px 18px rgba(0,0,0,.25);
+      background: rgba(0,0,0,.15);
+    }
+    @media (max-width: 540px){
+      .founder{ grid-template-columns: 1fr; }
+      .headshot{ width: 100%; height: auto; }
+    }
+
+    footer{
+      padding: 2rem 0;
+      opacity: .9;
+      font-size: .9rem;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .socials { display: flex; gap: 14px; justify-content: center; margin: 12px 0 18px; }
+    .social-link img{
+      width: 28px; height: 28px; display: block; opacity: .85;
+      transition: transform .15s ease, opacity .15s ease; object-fit: contain;
+    }
+    .social-link:hover img, .social-link:focus img{ transform: translateY(-2px); opacity: 1; }
+  </style>
+  <link rel="stylesheet" href="../assets/site-refresh.css">
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Primary">
+  <div class="container nav-inner">
+    <a class="brand glow-text" href="../" title="Go to homepage">Lumenergy LLC</a>
+    <div class="nav-links">
+      <a href="../what-we-do/">What We Do</a>
+      <a href="../our-role/">Our Role</a>
+      <a href="../materials/">Materials</a>
+      <a href="../about/">About</a>
+      <a href="../contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header container">
+  <img src="../lumenergylogo.png" alt="Lumenergy Logo" style="display:block;margin:0 auto 1rem;max-width:220px;width:100%;height:auto;">
+  <h1 class="glow-text" style="margin:.6rem 0 1rem;">About</h1>
+    <p class="section-intro">
+    Lumenergy LLC is a woman-owned-and-operated research and policy firm focused on renewable energy policy and advocacy in California. Lumenergy LLC is a single-member LLC founded by Maia Leroy in August, 2025.
+  </p>
+</header>
+
+<main class="container">
+  <h2 class="glow-text section-title center">Our Mission</h2>
+  <p class="section-intro">
+    Illuminate the path to a reliable, affordable clean energy future for all Californians by integrating science, policy, and thoughtful advocacy into holistic strategies.
+  </p>
+
+  <section class="grid" aria-label="Founder">
+    <article class="card">
+      <h3>About the Founder</h3>
+      <div class="founder">
+        <img src="../headshot.png" alt="Portrait of Maia Leroy" class="headshot">
+        <p class="muted">
+          Maia Leroy, Founder and Principal Consultant of Lumenergy LLC, is a California native with five years of experience in shaping climate and energy policy in the State.  She is the former Policy Director for the Center for Energy Efficiency and Renewable Technologies (CEERT), a widely respected clean-energy 501(c)(3) nonprofit that pushed for major reliability and decarbonization reforms by intervening at state agencies, convening renewable advocacy groups, and publishing widely cited policy analyses on renewable energy and transmission planning/permitting before ceasing operations in the fall of 2025.  Before her policy career, Maia pursued an academic background in physics with honors and dean’s list recognition and holds six years of laboratory and analytical experience.  Additionally, Maia has experience in teaching, training, and tutoring others in physics, mathematics, laboratory operations, and research and analysis.  She combines critical thinking with compassionate advocacy to push towards a cleaner, more equitable energy future.  She has been quoted by prominent media outlets, authored influential reports, testified before legislative committees, and led successful coalitions to advance renewable energy and transmission solutions.  Now, Maia utilizes her policy skills, scientific nature, and abundant connections to bring additional capacity to organizations like yours.
+        </p>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer class="container">
+  <p class="footer-note" style="text-align:center;margin:0.5rem 0 0.75rem;color:black;">
+    Like this website? Let me build one for your next campaign!
+  </p>
+  <nav class="socials" aria-label="Social media">
+    <a class="social-link" href="https://www.linkedin.com/company/lumenergyllc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <img src="../assets/icons/linkedin.png" alt="LinkedIn">
+    </a>
+    <a class="social-link" href="https://x.com/lumenergyllc" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)">
+      <img src="../assets/icons/x.svg" alt="X">
+    </a>
+    <a class="social-link" href="https://bsky.app/profile/lumenergyllc.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">
+      <img src="../assets/icons/bluesky.svg" alt="Bluesky">
+    </a>
+    <a class="social-link" href="https://instagram.com/lumenergyllc" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <img src="../assets/icons/instagram.svg" alt="Instagram">
+    </a>
+    <a class="social-link" href="https://tiktok.com/@lumenergyllc" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+      <img src="../assets/icons/tiktok.svg" alt="TikTok">
+    </a>
+  </nav>
+  <div style="color:black;">&copy; <span id="year"></span> Lumenergy LLC. All rights reserved.</div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  (function () {
+    function norm(p){ return p.replace(/\/index\.html$/,'').replace(/\/+$/,'/'); }
+    var current = norm(location.pathname);
+    document.querySelectorAll('.nav-links a[href]').forEach(function(a){
+      try {
+        var p = norm(new URL(a.getAttribute('href'), location.origin).pathname);
+        if (p === current) a.setAttribute('aria-current','page');
+      } catch(e) {}
+    });
+  })();
+</script>
+</body>
+</html>
