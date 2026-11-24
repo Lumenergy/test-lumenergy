@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Materials | Lumenergy LLC</title>
+  <meta name="description" content="Materials produced and/or influenced by Lumenergy LLC." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --deep:#2D1B4E;
+      --violet:#6D28D9;
+      --lav:#C084FC;
+      --gold:#FACC15;
+      --pearl:#F9FAFB;
+      --graphite:#111827;
+      --glow:#FFFAD2;
+    }
+    * { box-sizing:border-box; }
+    html, body { height:100%; width:100%; overflow-x:hidden; }
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      color: var(--pearl);
+      background: linear-gradient(90deg, #0E1745 0%, #4523B2 45%, #8A2FFF 100%),
+            radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 70%);
+      background-attachment: fixed;
+      background-size: cover;
+      line-height: 1.6;
+    }
+    a{ color:var(--pearl); text-decoration:none; }
+
+
+    img, svg, video, iframe { max-width: 100%; height: auto; }
+    .container{ max-width:1100px; margin:0 auto; padding:0 1.2rem; }
+
+    /* Nav */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(6px) saturate(140%);
+      background: linear-gradient(180deg, rgba(45,27,78,0.6), rgba(45,27,78,0.3));
+      border-bottom:1px solid rgba(250,252,255,0.08);
+    }
+    .nav-inner{ display:flex; align-items:center; gap:1rem; padding:0.8rem 0; }
+    .brand { font-family:'Raleway',sans-serif; font-weight:300; letter-spacing:1px; }
+    .brand .star{ color:var(--gold); text-shadow:0 0 10px rgba(250,204,21,0.8), 0 0 24px rgba(255,250,210,0.6);}
+    .nav a{
+      font-family:'Raleway',sans-serif; font-weight:300; letter-spacing:.5px;
+      color:var(--pearl); opacity:.9; margin-left:0; text-decoration:none;
+      transition: color .2s ease, text-shadow .25s ease, opacity .2s ease;
+    }
+    .nav a:hover,.nav a:focus-visible{
+      color:var(--glow); opacity:1;
+      text-shadow:0 0 10px rgba(255,250,210,0.9), 0 0 30px rgba(255,250,210,0.55), 0 0 60px rgba(255,250,210,0.35);
+      outline:none;
+    }
+.nav a[aria-current="page"]{
+  color: var(--glow);
+  opacity: 1;
+  text-shadow:
+    0 0 10px rgba(255,250,210,.9),
+    0 0 30px rgba(255,250,210,.55),
+    0 0 60px rgba(255,250,210,.35);
+}
+    
+    .nav-links{ margin-left:auto; display:flex; align-items:center; flex-wrap:wrap; gap:.75rem; }
+
+
+@media (max-width:900px){
+  .nav-inner{ flex-wrap:wrap; gap:.5rem; }
+  .brand{ flex:1 0 100%; text-align:center; }
+  .nav-links{
+    width:100%;
+    justify-content:center;
+    margin-left:0;
+  }
+}
+
+@media (max-width:640px){
+  .nav-inner{ flex-wrap:wrap; gap:.25rem; }
+  .brand{ flex:1 0 100%; text-align:center; }
+
+  .nav-links{
+    width:100%;
+    justify-content:center;
+    margin-left:0;
+    column-gap: .2rem;
+    row-gap: .2rem;
+  }
+
+  /* center nav on mobile */
+  .nav-links a{
+    font-size:.9rem;
+    letter-spacing:.3px;
+    margin-left:0;
+    padding:.25rem .4rem;
+    display:inline-block;
+    text-align:center;   
+    white-space:normal;
+    line-height:1.25; 
+  }
+}
+
+    
+ /* Page header */
+    header.page-header { padding: 1.5rem 0 1.5rem; text-align:center; }
+    .glow-text{
+      color:var(--glow);
+      text-shadow:0 0 6px rgba(255,250,210,0.8), 0 0 15px rgba(255,250,210,0.4), 0 0 25px rgba(255,250,210,0.2);
+    }
+    .page-title { margin: .8rem 0 1rem; } /* was .6rem on this page */
+    .section-intro{ max-width:760px; margin:0 auto 2rem; opacity:.95; }
+
+    /* Cards */
+    .grid {
+      display: grid;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    @media(min-width:900px){ .grid.cols-3{ grid-template-columns:repeat(3,1fr); } }
+    @media(min-width:700px){ .grid.cols-2{ grid-template-columns:repeat(2,1fr); } }
+    .card{
+      position:relative;
+      background: rgba(17, 10, 32, .55);
+      border:1px solid rgba(192,132,252,.25);
+      border-radius:18px; padding:1.2rem;
+      transition:.25s ease;
+      box-shadow: 0 0 0 rgba(250,204,21,0);
+    }
+    .card:hover{
+      transform:translateY(-2px);
+      border-color: rgba(250,204,21,.45);
+      box-shadow: 0 0 10px rgba(250,204,21,.35), 0 0 30px rgba(250,204,21,.25), 0 0 60px rgba(250,204,21,.15);
+    }
+    .card h3{ margin:.2rem 0 .6rem; }
+    .muted { font-weight:400; color:#e8defa; opacity:.9; }
+
+    /* Footer + socials */
+    footer{ padding:2rem 0; opacity:.9; font-size:.9rem; border-top:1px solid rgba(255,255,255,.08); }
+    .socials { display:flex; gap:14px; justify-content:center; margin:12px 0 18px; }
+    .social-link img{
+      width:28px; height:28px; display:block; opacity:.85;
+      transition:transform .15s ease, opacity .15s ease; object-fit:contain;
+    }
+    .social-link:hover img,.social-link:focus img{ transform:translateY(-2px); opacity:1; }
+    .footer-note{
+      display: block;
+      text-align: center;
+      margin: 0.5rem 0 0.75rem;
+    }
+  </style>
+
+  <!-- preloads audio -->
+  <link rel="preload" as="audio" href="../materials/mp3/KNXNews2025.mp3" type="audio/mpeg">
+
+  <!-- audio card CSS -->
+  <style>
+    .audio-card .audio-player{
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      align-items:center;
+      gap:.9rem;
+      padding:.75rem .9rem;
+      background:rgba(17,10,32,.35);
+      border:1px solid rgba(192,132,252,.28);
+      border-radius:14px;
+    }
+    .audio-card .play-btn{
+      width:46px;height:46px;border-radius:9999px;cursor:pointer;
+      display:grid;place-items:center;
+      background: radial-gradient(120% 120% at 30% 20%, rgba(250,204,21,.35), rgba(109,40,217,.35));
+      border:1px solid rgba(250,204,21,.45);
+      box-shadow:0 0 10px rgba(250,204,21,.35), 0 0 24px rgba(192,132,252,.25);
+      transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+      color:var(--graphite);
+    }
+    .audio-card .play-btn:hover,
+    .audio-card .play-btn:focus-visible{
+      transform:translateY(-1px);
+      border-color:rgba(250,204,21,.7);
+      box-shadow:0 0 14px rgba(250,204,21,.45),0 0 36px rgba(192,132,252,.35);
+      outline:none;
+    }
+    .audio-card .play-btn svg{width:22px;height:22px;fill:var(--glow);filter:drop-shadow(0 0 6px rgba(255,250,210,.6));}
+
+    .audio-card .timeline{
+      position:relative;height:10px;border-radius:999px;
+      background:linear-gradient(180deg, rgba(255,255,255,.15), rgba(255,255,255,.08));
+      border:1px solid rgba(192,132,252,.25);
+      overflow:hidden;cursor:pointer;
+    }
+    .audio-card .progress{
+      position:absolute;inset:0 auto 0 0;width:0%;
+      background:linear-gradient(90deg, var(--gold), #ffeaa7);
+      box-shadow:0 0 10px rgba(250,204,21,.5), 0 0 25px rgba(250,204,21,.35);
+    }
+    .audio-card .thumb{
+      position:absolute;top:50%;left:0%;transform:translate(-50%,-50%);
+      width:14px;height:14px;border-radius:50%;
+      background:var(--glow);border:1px solid rgba(255,255,255,.5);
+      box-shadow:0 0 8px rgba(255,250,210,.8);
+      pointer-events:none;
+    }
+    .audio-card .time{
+      font-variant-numeric:tabular-nums;
+      opacity:.9;min-width:96px;text-align:right;
+    }
+    .audio-card .title-row{
+      display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin:.25rem 0 .6rem;
+    }
+    .audio-card .title-row .muted{opacity:.85}
+    @media (max-width:480px){
+      .audio-card .audio-player{grid-template-columns:auto 1fr;grid-template-rows:auto auto;gap:.6rem}
+      .audio-card .time{grid-column:2/3;justify-self:end}
+    }
+    .audio-card .title-row { margin:0; }
+    .audio-card .title-row h3 { margin:.2rem 0 1rem; }           
+    .audio-card .title-row + .muted { margin:0 0 1rem 0; }         
+    .audio-card .title-row + .muted + .muted { margin-top:0 !important; } 
+
+  </style>
+  <link rel="stylesheet" href="../assets/site-refresh.css">
+</head>
+<body>
+  
+<!-- Nav -->
+<nav class="nav" role="navigation" aria-label="Primary">
+  <div class="container nav-inner">
+    <a class="brand glow-text" href="../" title="Go to homepage">Lumenergy LLC</a>
+    <div class="nav-links">
+      <a href="../what-we-do/">What We Do</a>
+      <a href="../our-role/">Our Role</a>
+      <a href="../materials/">Materials</a>
+      <a href="../about/">About</a>
+      <a href="../contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+  <header class="page-header container">
+     <img src="../lumenergylogo.png" alt="Lumenergy Logo" style="display:block;margin:0 auto 1rem;max-width:220px;width:100%;height:auto;">
+    <h1 class="glow-text page-title">Materials</h1>
+    <p class="section-intro">Below are materials influenced or worked on by Maia Leroy and Lumenergy LLC. Materials may not belong to Lumenergy LLC.</p>
+  </header>
+
+  <main class="container">
+    
+<!-- NEW FILES AND LINKS GO HERE -->
+    
+  <section class="grid cols-2" aria-label="Materials list">
+
+    <article class="card">
+        <h3>Article: "'The biggest transformation in a century’: how California remade itself as a clean energy powerhouse"</h3>
+        <p class="muted">Dani Anguiano, The Guardian • December 2025</p>
+        <p class="muted" style="margin:.4rem 0 1rem;">"As officials from around the world met in Brazil for the Cop30 climate summit last month, the US president was nowhere to be found, nor were any members of his cabinet..."</p>
+        <p>
+          <a class="cta" href="https://www.theguardian.com/us-news/2025/dec/20/california-renewable-energy" target="_blank" rel="noopener noreferrer">View Article</a>
+        </p>
+      </article>
+
+    <article class="card">
+        <h3>Article: "Data centers are putting new strain on California’s grid. A new report estimates the impacts"</h3>
+        <p class="muted">Alejandro Lazo, CalMatters • November 2025</p>
+        <p class="muted" style="margin:.4rem 0 1rem;">"California is a major hub for data centers — the facilities that store and transmit much of the internet. But just how much these power-hungry operations affect the state’s energy use..."</p>
+        <p>
+          <a class="cta" href="https://calmatters.org/environment/2025/11/data-center-environmental-report" target="_blank" rel="noopener noreferrer">View Article</a>
+        </p>
+      </article>      
+ 
+    <article class="card">
+        <h3>Article: "Newsom touts California’s record battery energy gains at U.N. climate conference"</h3>
+        <p class="muted">Hayley Smith, LA Times • November 2025</p>
+        <p class="muted" style="margin:.4rem 0 1rem;">"California added 1,200 megawatts of battery energy storage to its electrical grid over the last six months, further building on its nation-leading capacity and pushing the state closer to..."</p>
+        <p>
+          <a class="cta" href="https://www.latimes.com/environment/story/2025-11-13/newsom-touts-record-california-battery-energy-gains-at-un-conference" target="_blank" rel="noopener noreferrer">View Article</a>
+        </p>
+      </article>
+    
+    <!-- FOR AUDIO CLIPS : reuse from here down to next comment -->
+    <article class="card audio-card" data-src="../materials/mp3/KNXNews2025.mp3">
+        <div class="title-row">
+        <h3>Audio: How Battery Storage Has Improved California's Grid Reliability</h3>
+        </div>
+
+    <p class="muted">KNX News • October 2025</p>
+    <p class="muted" style="margin:.4rem 0 1rem;">California hasn't needed a Flex Alert since 2022, in large part thanks to new battery storage facilities.</p>
+
+    <div class="audio-player" data-audio>
+      <button class="play-btn" type="button" aria-label="Play" aria-pressed="false" data-play>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+
+    <div class="timeline" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0" tabindex="0" data-timeline>
+      <div class="progress" data-progress></div>
+      <div class="thumb" data-thumb></div>
+    </div>
+
+    <div class="time">
+      <span data-current>0:00</span> / <span data-total>--:--</span>
+    </div>
+  </div>
+
+  <p>
+    <a class="cta" href="../materials/mp3/KNXNews2025.mp3" target="_blank" rel="noopener noreferrer" type="audio/mpeg">Open Audio</a>
+  </p>
+
+  <noscript>
+    <audio controls preload="none" src="../materials/mp3/KNXNews2025.mp3" style="width:100%;margin-top:.6rem"></audio>
+  </noscript>
+</article>
+
+<!-- FOR AUDIO CLIPS: up to here -->
+      
+      <article class="card">
+        <h3>Article: "California invests big in battery energy storage — and leaves rolling blackouts behind"</h3>
+        <p class="muted">Hayley Smith, LA Times • October 2025</p>
+        <p class="muted" style="margin:.4rem 0 1rem;">"For decades, rolling blackouts and urgent calls for energy conservation were part of life in California — a reluctant summer ritual almost as reliable as the heat waves that drove them..."</p>
+        <p>
+          <a class="cta" href="https://www.latimes.com/environment/story/2025-10-17/california-made-it-through-another-summer-without-a-flex-alert" target="_blank" rel="noopener noreferrer">View Article</a>
+        </p>
+      </article>
+
+    <article class="card">
+        <h3>Webinar: "A Just Transition: The Rise of Battery Storage Over Gas Plants"</h3>
+        <p class="muted">CEERT &amp; Regenerate California • June 2025</p>
+        <p class="muted" style="margin:.4rem 0 1rem;">"This webinar, from June, 2025, marks the release of CEERT and Regenerate California's latest report, "A Better Deal for Californians: The Rise of Battery Storage Over Gas Generation". This report details..."</p>
+        <p>
+          <a class="cta" href="https://www.youtube.com/watch?v=mdIWbAGVqWA" target="_blank" rel="noopener noreferrer">Watch Webinar</a>
+        </p>
+      </article>
+      
+      <article class="card">
+        <h3>Report: "A Better Deal for Californians: The Rise of Battery Storage Over Gas Generation"</h3>
+        <p class="muted">CEERT &amp; Regenerate California • June 2025</p>
+        <p class="muted" style="margin:.4rem 0 1rem;">"2024 marked the year of batteries, as they proved essential to grid reliability and significantly improved the efficiency of California’s electricity system..."</p>
+        <p>
+        <a class="cta"
+           href="./pdfs/A%20Better%20Deal%20for%20Californians%20Report.pdf"
+           target="_blank" rel="noopener noreferrer" type="application/pdf">
+          View Report
+        </a>
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Article: "Environmentalists urge California to boost batteries, cut gas for grid reliability"</h3>
+        <p class="muted">Garrett Hering, S&amp;P Global • June 2025</p>
+        <p class="muted" style="margin:.4rem 0 1rem;">"California should reduce its reliance on natural gas-fired power plants with a suite of regulatory reforms to expand energy storage, according to a new report highlighting the central role of batteries..."</p>
+        <p>
+          <a class="cta" href="https://www.spglobal.com/commodity-insights/en/news-research/latest-news/electric-power/062025-environmentalists-urge-california-to-boost-batteries-cut-gas-for-grid-reliability" target="_blank" rel="noopener noreferrer">View Article</a>
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Article: "New report finds battery storage cheaper, more reliable than gas plants in California"</h3>
+        <p class="muted">Staff Report, Imperial Valley Press • June 2025</p>
+        <p class="muted" style="margin:.4rem 0 1rem;">"Battery storage is outpacing gas-fired power plants in both cost and reliability, saving Californians money and reducing the risk of blackouts, according to a new report released..."</p>
+        <p>
+          <a class="cta" href="https://www.ivpressonline.com/news/new-report-finds-battery-storage-cheaper-more-reliable-than-gas-plants-in-california/article_025dec22-504e-4d41-9af2-fd501bc497da.html" target="_blank" rel="noopener noreferrer">View Article</a>
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Press Release: "New Report: Battery Storage Saves Californians Money, Outperforms Gas Plants on Cost and Reliability"</h3>
+        <p class="muted">Sierra Club • June 2025</p>
+        <p class="muted" style="margin:.4rem 0 1rem;">"SACRAMENTO, Calif. — Battery storage saves Californians money while improving public health compared to gas-fired power plants, according to a new report..."</p>
+        <p>
+          <a class="cta" href="https://www.sierraclub.org/press-releases/2025/06/new-report-battery-storage-saves-californians-money-outperforms-gas-plants" target="_blank" rel="noopener noreferrer">View Release</a>
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Article: "California AI Power Needs Conflict With Pledge to Cut Emissions"</h3>
+        <p class="muted">Andrew Oxford, Bloomberg Government • July 2024</p>
+        <p class="muted" style="margin:.4rem 0 1rem;">"The artificial intelligence boom that has bolstered California’s economic fortunes also threatens to undo some of the state’s environmental goals as the need for new computing power demands more energy..."</p>
+        <p>
+          <a class="cta" href="https://news.bgov.com/states-of-play/californias-ai-power-needs-conflict-with-pledge-to-cut-emissions" target="_blank" rel="noopener noreferrer">View Article</a>
+        </p>
+      </article>
+
+       <article class="card">
+        <h3>Campaign: Unlock the Grid</h3>
+        <p class="muted">Unlock the Grid Coalition • 2024</p>
+        <p class="muted" style="margin:.4rem 0 1rem;">The Unlock the Grid coalition is a diverse group of stakeholders who want to see California utilities implement GETs and advanced conductors as clean energy solutions that also bring rates down and help prevent wildfires.</p>
+        <p>
+          <a class="cta" href="https://www.unlockthegrid.org" target="_blank" rel="noopener noreferrer">Visit Website</a>
+        </p>
+      </article>
+      
+    </section>
+  </main>
+
+  
+  <footer class="container">
+    <p class="footer-note" style="text-align:center;margin:0.5rem 0 0.75rem;color:black;">
+      Like this website? Let me build one for your next campaign!
+      </p>
+    
+    <nav class="socials" aria-label="Social media">
+      <a class="social-link" href="https://www.linkedin.com/company/lumenergyllc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <img src="../assets/icons/linkedin.png" alt="LinkedIn" width="28" height="28">
+      </a>
+      <a class="social-link" href="https://x.com/lumenergyllc" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)">
+        <img src="../assets/icons/x.svg" alt="X" width="28" height="28">
+      </a>
+      <a class="social-link" href="https://bsky.app/profile/lumenergyllc.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">
+        <img src="../assets/icons/bluesky.svg" alt="Bluesky" width="28" height="28">
+      </a>
+      <a class="social-link" href="https://instagram.com/lumenergyllc" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <img src="../assets/icons/instagram.svg" alt="Instagram" width="28" height="28">
+      </a>
+      <a class="social-link" href="https://tiktok.com/@lumenergyllc" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <img src="../assets/icons/tiktok.svg" alt="TikTok" width="28" height="28">
+      </a>
+    </nav>
+
+    <div style="color:black;">&copy; <span id="year"></span> Lumenergy LLC. All rights reserved.</div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+  (function() {
+    var current = location.pathname.replace(/\/index\.html$/,'');
+    document.querySelectorAll('.nav-links a[href]').forEach(function(a){
+      try {
+        var u = new URL(a.getAttribute('href'), location.origin);
+        var p = u.pathname.replace(/\/index\.html$/,'');
+        if (p === current) a.setAttribute('aria-current','page');
+      } catch (e) {}
+    });
+  })();
+  </script>
+
+  <!-- audio player script -->
+  <script>
+  (() => {
+    const PLAY_SVG  = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+    const PAUSE_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>';
+
+    const fmt = s => (!isFinite(s) ? '--:--' : 
+      Math.floor(s/60) + ':' + String(Math.floor(s%60)).padStart(2,'0'));
+
+    let currentAPI = null;
+
+    document.querySelectorAll('.audio-card').forEach(card => {
+      const src = card.getAttribute('data-src');
+      if (!src) return;
+
+      const player   = card.querySelector('[data-audio]');
+      const btn      = player.querySelector('[data-play]');
+      const timeline = player.querySelector('[data-timeline]');
+      const progress = player.querySelector('[data-progress]');
+      const thumb    = player.querySelector('[data-thumb]');
+      const curEl    = player.querySelector('[data-current]');
+      const totEl    = player.querySelector('[data-total]');
+
+      const audio = new Audio(src);
+      audio.preload = 'metadata';
+
+      const setBtnPlay  = () => { btn.setAttribute('aria-pressed','false'); btn.setAttribute('aria-label','Play');  btn.innerHTML = PLAY_SVG; };
+      const setBtnPause = () => { btn.setAttribute('aria-pressed','true');  btn.setAttribute('aria-label','Pause'); btn.innerHTML = PAUSE_SVG; };
+
+      audio.addEventListener('loadedmetadata', () => {
+        totEl.textContent = fmt(audio.duration);
+        timeline.setAttribute('aria-valuemax', Math.floor(audio.duration || 0));
+      });
+
+      audio.addEventListener('timeupdate', () => {
+        const d = audio.duration || 0, t = audio.currentTime || 0;
+        const pct = d ? (t/d)*100 : 0;
+        curEl.textContent = fmt(t);
+        progress.style.width = pct + '%';
+        thumb.style.left = pct + '%';
+        timeline.setAttribute('aria-valuenow', Math.floor(t));
+      });
+
+      audio.addEventListener('ended', () => {
+        audio.currentTime = 0;
+        setBtnPlay();
+      });
+
+      const api = {
+        pause(){ audio.pause(); setBtnPlay(); },
+        play(){
+          if (currentAPI && currentAPI !== api) currentAPI.pause();
+          audio.play();
+          setBtnPause();
+          currentAPI = api;
+        }
+      };
+
+      btn.addEventListener('click', () => {
+        if (audio.paused) api.play(); else api.pause();
+      });
+
+      // pointer scrubbing
+      let dragging = false;
+      const seekTo = (clientX) => {
+        const rect = timeline.getBoundingClientRect();
+        let r = (clientX - rect.left) / rect.width;
+        r = Math.max(0, Math.min(1, r));
+        if (isFinite(audio.duration)) audio.currentTime = r * audio.duration;
+      };
+      timeline.addEventListener('pointerdown', e => {
+        dragging = true;
+        timeline.setPointerCapture(e.pointerId);
+        seekTo(e.clientX);
+      });
+      timeline.addEventListener('pointermove', e => { if (dragging) seekTo(e.clientX); });
+      timeline.addEventListener('pointerup',   e => { dragging = false; timeline.releasePointerCapture?.(e.pointerId); });
+
+      // keyboard seeking on the slider
+      timeline.addEventListener('keydown', e => {
+        if (!isFinite(audio.duration)) return;
+        const step = e.shiftKey ? 10 : 5;
+        if (e.key === 'ArrowRight') { audio.currentTime = Math.min(audio.currentTime + step, audio.duration); e.preventDefault(); }
+        if (e.key === 'ArrowLeft')  { audio.currentTime = Math.max(audio.currentTime - step, 0);              e.preventDefault(); }
+        if (e.key === 'Home')       { audio.currentTime = 0;                                                  e.preventDefault(); }
+        if (e.key === 'End')        { audio.currentTime = audio.duration;                                     e.preventDefault(); }
+      });
+
+      setBtnPlay();
+    });
+
+    window.addEventListener('pagehide', () => { if (currentAPI) currentAPI.pause(); }, { once:true });
+  })();
+  </script>
+
+</body>
+</html>
