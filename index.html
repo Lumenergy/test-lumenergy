@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lumenergy LLC: Illuminate Your Energy Advocacy</title>
+  <meta name="description" content="Lumenergy LLC: Illuminate Your Energy Advocacy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --deep:#2D1B4E; --violet:#6D28D9; --lav:#C084FC; --gold:#FACC15;
+      --pearl:#F9FAFB; --graphite:#111827; --glow:#FFFAD2;
+    }
+    * { box-sizing:border-box; }
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+    }
+    body{
+      margin:0; font-family:'Raleway',sans-serif; color:var(--pearl);
+      background: linear-gradient(90deg, #0E1745 0%, #4523B2 45%, #8A2FFF 100%),
+            radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 70%);
+      background-attachment: fixed;
+      background-size: cover;
+      line-height:1.6;
+    }
+    img, svg, video, iframe {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a{ color:var(--pearl); text-decoration:none; }
+    .container{ max-width:1100px; margin:0 auto; padding:0 1.2rem; }
+
+    /* Nav */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(6px) saturate(140%);
+      background: linear-gradient(180deg, rgba(45,27,78,0.6), rgba(45,27,78,0.3));
+      border-bottom:1px solid rgba(250,252,255,0.08);
+    }
+    .nav-inner{ display:flex; align-items:center; gap:1rem; padding:0.8rem 0; }
+    .brand{ font-family:'Raleway',sans-serif; font-weight:300; letter-spacing:1px; }
+    .brand .star{ color:var(--gold); text-shadow:0 0 10px rgba(250,204,21,.8), 0 0 24px rgba(255,250,210,.6); }
+    .nav a{
+      font-family:'Raleway',sans-serif; font-weight:300; letter-spacing:.5px;
+      color:var(--pearl); opacity:.9; transition:color .2s,text-shadow .25s,opacity .2s;
+    }
+    .nav a:hover, .nav a:focus-visible{
+      color:var(--glow); opacity:1;
+      text-shadow:0 0 10px rgba(255,250,210,.9), 0 0 30px rgba(255,250,210,.55), 0 0 60px rgba(255,250,210,.35);
+      outline:none;
+    }
+    /* Auto glow target */
+    .nav a[aria-current="page"]{
+      color:var(--glow); opacity:1;
+      text-shadow:0 0 10px rgba(255,250,210,.9), 0 0 30px rgba(255,250,210,.55), 0 0 60px rgba(255,250,210,.35);
+    }
+    .nav-links{ margin-left:auto; display:flex; align-items:center; flex-wrap:wrap; gap:.75rem; }
+
+@media (max-width:900px){
+  .nav-inner{ flex-wrap:wrap; gap:.5rem; }
+  .brand{ flex:1 0 100%; text-align:center; }
+  .nav-links{ width:100%; justify-content:center; margin-left:0; }
+  .nav-links a{ margin-left:0; }
+}
+
+@media (max-width:640px){
+  .nav-inner{ flex-wrap:wrap; gap:.25rem; }
+  .brand{ flex:1 0 100%; text-align:center; }
+
+  .nav-links{
+    width:100%;
+    justify-content:center;
+    margin-left:0;
+    column-gap: .2rem;
+    row-gap: .2rem;
+  }
+
+  /* Center nav labels on mobile */
+  .nav-links a{
+    font-size:.9rem;
+    letter-spacing:.3px;
+    margin-left:0;
+    padding:.25rem .4rem;
+    display:inline-block;
+    text-align:center;  
+    white-space:normal; 
+    line-height:1.25;
+  }
+}
+
+    /* Hero */
+    .hero{ padding:2rem 0 2rem; text-align:center; }
+    .hero-logo{ display:block; margin:0 auto 0rem; max-width:680px; width:100%; height:auto; }
+    .hero-title{ font-size:2rem; margin:.6rem 0 1rem; }
+    .section-intro{ max-width:760px; margin:0 auto 2rem; opacity:.95; }
+    .glow-text{
+      color:var(--glow);
+      text-shadow:0 0 6px rgba(255,250,210,.8), 0 0 15px rgba(255,250,210,.4), 0 0 25px rgba(255,250,210,.2);
+    }
+    .cta{
+      display:inline-block; margin-top:1.5rem; padding:.9rem 1.2rem;
+      border-radius:14px; font-weight:600; letter-spacing:.2px;
+      background:linear-gradient(135deg, var(--gold), #ffe585); color:#3a2a00;
+      box-shadow:0 5px 20px rgba(250,204,21,.35); transition:transform .15s, box-shadow .15s;
+    }
+    .cta:hover{ transform:translateY(-1px); box-shadow:0 10px 28px rgba(250,204,21,.45); }
+
+    /* Footer */
+    footer{ padding:2rem 0; opacity:.9; font-size:.9rem; border-top:1px solid rgba(255,255,255,.08); }
+    .socials{ display:flex; gap:14px; justify-content:center; margin:12px 0 18px; }
+    .social-link img{ width:28px; height:28px; display:block; opacity:.85; transition:transform .15s, opacity .15s; object-fit:contain; }
+    .social-link:hover img, .social-link:focus img{ transform:translateY(-2px); opacity:1; }
+  </style>
+  <link rel="stylesheet" href="./assets/site-refresh.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" role="navigation" aria-label="Primary">
+    <div class="container nav-inner">
+      <a class="brand glow-text" href="./" title="Go to homepage">Lumenergy LLC</a>
+      <div class="nav-links">
+        <a href="./what-we-do/">What We Do</a>
+        <a href="./our-role/">Our Role</a>
+        <a href="./materials/">Materials</a>
+        <a href="./about/">About</a>
+        <a href="./contact/">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Existing homepage content in a lighter split layout -->
+  <header class="hero container">
+    <div class="hero-layout">
+      <div class="hero-copy">
+        <img src="./lumenergylogo.png" alt="Lumenergy Logo" class="hero-logo">
+        <h1 class="glow-text hero-title">Illuminate Your Energy Advocacy</h1>
+        <p class="section-intro">
+          Founded in 2025, Lumenergy LLC offers independent support for nonprofits and non-governmental organizations
+          focused on climate and energy policy in California.
+        </p>
+        <a class="cta" href="./contact/">Get in Touch</a>
+      </div>
+      <div class="hero-visual">
+        <img src="./assets/photos/solar-wind-landscape.jpg" alt="Solar panels and wind turbines in a mountainous landscape" loading="eager">
+      </div>
+    </div>
+  </header>
+
+  <main class="site-highlights container" aria-label="Explore Lumenergy">
+    <h2>Explore Lumenergy</h2>
+    <div class="highlight-grid">
+      <a class="highlight-link" href="./what-we-do/">
+        <img src="./assets/photos/utility-solar-farm.jpg" alt="Aerial photograph of a large solar energy facility" loading="lazy">
+        <div class="highlight-body"><strong>What We Do</strong><span>Consulting, research, strategy, and educational support.</span></div>
+      </a>
+      <a class="highlight-link" href="./our-role/">
+        <img src="./assets/photos/battery-storage-facility.jpg" alt="Utility-scale battery energy storage installation" loading="lazy">
+        <div class="highlight-body"><strong>Our Role</strong><span>Connecting scientific analysis with practical energy policy advocacy.</span></div>
+      </a>
+      <a class="highlight-link" href="./materials/">
+        <img src="./assets/photos/transmission-line.jpg" alt="High-voltage power lines and transmission tower" loading="lazy">
+        <div class="highlight-body"><strong>Materials</strong><span>Public articles, reports, webinars, and campaign resources.</span></div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="container">
+    
+    <p class="footer-note" style="text-align:center;margin:0.5rem 0 0.75rem;color:black;">
+      Like this website? Let me build one for your next campaign!
+      </p>
+    
+    <nav class="socials" aria-label="Social media">
+      <a class="social-link" href="https://www.linkedin.com/company/lumenergyllc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <img src="./assets/icons/linkedin.png" alt="LinkedIn" width="28" height="28">
+      </a>
+      <a class="social-link" href="https://x.com/lumenergyllc" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)">
+        <img src="./assets/icons/x.svg" alt="X" width="28" height="28">
+      </a>
+      <a class="social-link" href="https://bsky.app/profile/lumenergyllc.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">
+        <img src="./assets/icons/bluesky.svg" alt="Bluesky" width="28" height="28">
+      </a>
+      <a class="social-link" href="https://instagram.com/lumenergyllc" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <img src="./assets/icons/instagram.svg" alt="Instagram" width="28" height="28">
+      </a>
+      <a class="social-link" href="https://tiktok.com/@lumenergyllc" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <img src="./assets/icons/tiktok.svg" alt="TikTok" width="28" height="28">
+      </a>
+    </nav>
+    <div style="color:black;">&copy; <span id="year"></span> Lumenergy LLC. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    (function() {
+      var current = location.pathname.replace(/\/index\.html$/,'').toLowerCase();
+      document.querySelectorAll('.nav-links a[href]').forEach(function(a){
+        try{
+          var p = new URL(a.getAttribute('href'), location.origin)
+                    .pathname.replace(/\/index\.html$/,'').toLowerCase();
+          if (p === current) a.setAttribute('aria-current','page');
+        }catch(e){}
+      });
+    })();
+  </script>
+</body>
+</html>
