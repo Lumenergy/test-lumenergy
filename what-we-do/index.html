@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What We Do | Lumenergy LLC</title>
+  <meta name="description" content="Services offered by Lumenergy LLC." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --deep:#2D1B4E;
+      --violet:#6D28D9;
+      --lav:#C084FC;
+      --gold:#FACC15;
+      --pearl:#F9FAFB;
+      --graphite:#111827;
+      --glow:#FFFAD2;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+    }
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      color: var(--pearl);
+      background: linear-gradient(90deg, #0E1745 0%, #4523B2 45%, #8A2FFF 100%),
+            radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 70%);
+      background-attachment: fixed;
+      background-size: cover;
+      line-height: 1.6;
+    }
+
+    img, svg, video, iframe {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a { color: var(--pearl); text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.2rem; }
+
+    /* Nav */
+    .nav{
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(6px) saturate(140%);
+      background: linear-gradient(180deg, rgba(45,27,78,0.6), rgba(45,27,78,0.3));
+      border-bottom: 1px solid rgba(250,252,255,0.08);
+    }
+    .nav-inner{ display:flex; align-items:center; gap:1rem; padding:0.8rem 0; }
+    .brand { font-weight:300; letter-spacing:1px; }
+    .brand .star{ color:var(--gold); text-shadow:0 0 10px rgba(250,204,21,0.8), 0 0 24px rgba(255,250,210,0.6); }
+    .nav a{
+      font-weight:300; letter-spacing:.5px;
+      color:var(--pearl); opacity:.9; margin-left:0;
+      transition: color .2s ease, text-shadow .25s ease, opacity .2s ease;
+    }
+    .nav a:hover, .nav a:focus-visible{
+      color:var(--glow); opacity:1;
+      text-shadow:0 0 10px rgba(255,250,210,0.9), 0 0 30px rgba(255,250,210,0.55), 0 0 60px rgba(255,250,210,0.35);
+      outline:none;
+    }
+    .nav a[aria-current="page"]{
+      color: var(--glow);
+      opacity: 1;
+      text-shadow:
+        0 0 10px rgba(255,250,210,.9),
+        0 0 30px rgba(255,250,210,.55),
+        0 0 60px rgba(255,250,210,.35);
+    }
+    .nav-links{
+      margin-left:auto;
+      display:flex;
+      align-items:center;
+      flex-wrap: wrap;
+      gap:.75rem;
+    }
+
+@media (max-width:900px){
+  .nav-inner{ flex-wrap:wrap; gap:.5rem; }
+  .brand{ flex:1 0 100%; text-align:center; }
+  .nav-links{
+    width:100%;
+    justify-content:center;
+    margin-left:0;
+  }
+}
+
+@media (max-width:640px){
+  .nav-inner{ flex-wrap:wrap; gap:.25rem; }
+  .brand{ flex:1 0 100%; text-align:center; }
+  .nav-links{
+    width:100%;
+    justify-content:center;
+    margin-left:0;
+    column-gap: .2rem;
+    row-gap: .2rem;
+  }
+  .nav-links a{
+    font-size:.9rem;
+    letter-spacing:.3px;
+    margin-left:0;
+    padding:.25rem .4rem;
+    display:inline-block;
+    text-align:center;
+    white-space:normal;
+    line-height:1.25;
+  }
+}
+
+    /* Page header */
+    header.page-header { padding: 1.5rem 0 1.5rem; text-align:center; }
+    .glow-text{
+      color: var(--glow);
+      text-shadow: 0 0 6px rgba(255,250,210,0.8), 0 0 15px rgba(255,250,210,0.4), 0 0 25px rgba(255,250,210,0.2);
+    }
+    
+/* Section headings */
+.section-title{
+  text-align: left;
+  margin: 0 0 1rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+}
+
+    /* cards */
+    .grid {
+      display: grid;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    @media (min-width: 900px){
+      .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+      .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    }
+    .card{
+      position: relative;
+      background: rgba(17, 10, 32, .55);
+      border: 1px solid rgba(192,132,252,.25);
+      border-radius: 18px; padding: 1.2rem;
+      transition: .25s ease;
+      box-shadow: 0 0 0 rgba(250,204,21,0);
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      border-color: rgba(250,204,21,.45);
+      box-shadow:
+        0 0 10px rgba(250,204,21,.35),
+        0 0 30px rgba(250,204,21,.25),
+        0 0 60px rgba(250,204,21,.15);
+    }
+    .card h3{ margin:.2rem 0 .6rem; }
+    .muted {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      color: #e8defa;
+      opacity: .9;
+    }
+
+    /* Footer + socials */
+    footer{
+      padding: 2rem 0;
+      opacity: .9;
+      font-size: .9rem;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .socials { display: flex; gap: 14px; justify-content: center; margin: 12px 0 18px; }
+    .social-link img{
+      width: 28px; height: 28px; display: block; opacity: .85;
+      transition: transform .15s ease, opacity .15s ease; object-fit: contain;
+    }
+    .social-link:hover img, .social-link:focus img{ transform: translateY(-2px); opacity: 1; }
+  
+    /* deliverables grid */
+    .services-grid { margin-bottom: 1.6rem; }
+    .deliverables-wrap { margin-top: .25rem; }
+    .deliverables-title { margin: 0 0 1rem; font-size: 1.35rem; font-weight: 600; }
+    .deliverables-grid{
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin: 0 0 1.15rem;
+    }
+
+    @media (max-width: 900px){ 
+      .deliverables-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 520px){
+      .deliverables-grid{ grid-template-columns: 1fr; }
+    }
+
+    .deliverable-tile{
+      position: relative;
+      background: rgba(17, 10, 32, .55);
+      border: 1px solid rgba(192,132,252,.25);
+      border-radius: 18px;
+      padding: 1.05rem 1rem;
+      transition: .25s ease;
+      box-shadow: 0 0 0 rgba(250,204,21,0);
+      display: flex;
+      gap: .9rem;
+      align-items: center;
+      min-height: 74px;
+    }
+    .deliverable-tile:hover,
+    .deliverable-tile:focus-within{
+      transform: translateY(-2px);
+      border-color: rgba(250,204,21,.45);
+      box-shadow:
+        0 0 10px rgba(250,204,21,.35),
+        0 0 30px rgba(250,204,21,.25),
+        0 0 60px rgba(250,204,21,.15);
+    }
+
+    .deliverable-icon{
+      width: 26px;
+      height: 26px;
+      flex: 0 0 auto;
+      color: var(--glow);
+      filter: drop-shadow(0 0 10px rgba(192, 132, 252, .28));
+    }
+
+    .deliverable-label{
+      margin: 0;
+      font-size: 1.02rem;
+      letter-spacing: .2px;
+    }
+
+    .deliverables-note{
+      margin: 0 0 1.6rem;
+      max-width: none;
+    }
+
+    a.inline-link{
+      color: var(--gold);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 2px;
+    }
+    a.inline-link:hover,
+    a.inline-link:focus{
+      filter: drop-shadow(0 0 10px rgba(250, 204, 21, .35));
+    }
+  </style>
+  <link rel="stylesheet" href="../assets/site-refresh.css">
+</head>
+<body>
+
+  <!-- Nav -->
+<nav class="nav" role="navigation" aria-label="Primary">
+  <div class="container nav-inner">
+    <a class="brand glow-text" href="../" title="Go to homepage">Lumenergy LLC</a>
+    <div class="nav-links">
+      <a href="../what-we-do/">What We Do</a>
+      <a href="../our-role/">Our Role</a>
+      <a href="../materials/">Materials</a>
+      <a href="../about/">About</a>
+      <a href="../contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+  <header class="page-header container">
+     <img src="../lumenergylogo.png" alt="Lumenergy Logo" style="display:block;margin:0 auto 1rem;max-width:220px;width:100%;height:auto;">
+    <h1 class="glow-text" style="margin:.6rem 0 1rem;">What We Do</h1>
+  </header>
+
+  <main class="container">
+  <div class="feature-strip" aria-label="Clean energy and grid infrastructure">
+    <figure><img src="../assets/photos/solar-panels-sky.jpg" alt="Rows of solar modules below a blue sky" loading="lazy"><figcaption>Solar &amp; renewables</figcaption></figure>
+    <figure><img src="../assets/photos/battery-storage-facility.jpg" alt="Rows of battery storage units at a utility-scale facility" loading="lazy"><figcaption>Energy storage</figcaption></figure>
+    <figure><img src="../assets/photos/grid-substation.jpg" alt="High-voltage electricity substation" loading="lazy"><figcaption>Grid infrastructure</figcaption></figure>
+  </div>
+
+<!-- Services -->
+<section id="services" aria-label="Services">
+  <h2 class="glow-text section-title">Services</h2>
+  <div class="grid cols-3 services-grid">
+    <article class="card">
+      <h3>Consulting &amp; Education</h3>
+      <p class="muted">Navigate complex grid and energy subjects, including specific technology composition and operation; policy, legislative, and regulatory analysis; grid and energy physics; storage chemistries; environmental and economic impacts; and more.</p>
+    </article>
+    <article class="card">
+      <h3>Research &amp; Strategy</h3>
+      <p class="muted">Get comprehensive information gathering, objective analysis, writing capacity, campaign strategies, and other research or advocacy needs addressed.</p>
+    </article>
+    <article class="card">
+      <h3>Organizational Development</h3>
+      <p class="muted">Develop grant proposals, workplans, success metrics, project tracking tools, graphic design, and web development.</p>
+    </article>
+  </div>
+
+  <div class="deliverables-wrap" aria-label="Deliverables">
+    <h3 class="glow-text deliverables-title">Deliverables</h3>
+
+    <div class="deliverables-grid" role="list">
+      <div class="deliverable-tile" role="listitem">
+        <svg class="deliverable-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z"/>
+        </svg>
+        <p class="deliverable-label">Policy Tracking &amp; Briefings</p>
+      </div>
+
+      <div class="deliverable-tile" role="listitem">
+        <svg class="deliverable-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Zm3.75 11.625a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"/>
+        </svg>
+        <p class="deliverable-label">Research Reports</p>
+      </div>
+
+      <div class="deliverable-tile" role="listitem">
+        <svg class="deliverable-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z"/>
+        </svg>
+        <p class="deliverable-label">Written Comments &amp; Public Testimony</p>
+      </div>
+
+      <div class="deliverable-tile" role="listitem">
+        <svg class="deliverable-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"/>
+        </svg>
+        <p class="deliverable-label">Webinars &amp; Presentations</p>
+      </div>
+
+      <div class="deliverable-tile" role="listitem">
+        <svg class="deliverable-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/>
+        </svg>
+        <p class="deliverable-label">Fact Sheets &amp; Educational Materials</p>
+      </div>
+
+      <div class="deliverable-tile" role="listitem">
+        <svg class="deliverable-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 0 1-.657.643 48.39 48.39 0 0 1-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 0 1-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 0 0-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 0 1-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 0 0 .657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 0 1-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 0 0 5.427-.63 48.05 48.05 0 0 0 .582-4.717.532.532 0 0 0-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 0 0 .658-.663 48.422 48.422 0 0 0-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 0 1-.61-.58v0Z"/>
+        </svg>
+        <p class="deliverable-label">Coalition Planning &amp; Facilitation</p>
+      </div>
+
+      <div class="deliverable-tile" role="listitem">
+        <svg class="deliverable-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"/>
+        </svg>
+        <p class="deliverable-label">Event Planning</p>
+      </div>
+
+      <div class="deliverable-tile" role="listitem">
+                <svg class="deliverable-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 0 1 9 9v.375M10.125 2.25A3.375 3.375 0 0 1 13.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 0 1 3.375 3.375" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 10.5v7.5" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 11.25c0-1.243-1.007-2.25-2.25-2.25S9.75 10.007 9.75 11.25c0 1.243 1.007 2.25 2.25 2.25s2.25 1.007 2.25 2.25-1.007 2.25-2.25 2.25S9.75 18.993 9.75 17.75" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v-1.25M12 20.25V19" />
+        </svg>
+        <p class="deliverable-label">Grant Proposals</p>
+      </div>
+    </div>
+
+    <p class="muted deliverables-note">
+      If your organization is seeking other project support that is not listed here, Lumenergy LLC may still be able to help. Please <a class="inline-link" href="https://lumenergyllc.com/contact/">contact</a> Lumenergy LLC to set up a consultation.
+    </p>
+  </div>
+</section>
+
+<!-- Areas of Interest -->
+<section id="work" aria-label="Areas of Interest">
+  <h2 class="glow-text section-title">Areas of Interest</h2>
+  <div class="grid cols-2">
+    <article class="card">
+      <h3>Renewable Energy and Storage Technologies</h3>
+      <p class="muted">Powering California with clean, renewable resources paired with batteries and other storage solutions.</p>
+    </article>
+    <article class="card">
+      <h3>Grid Reliability</h3>
+      <p class="muted">Modernizing the existing grid with advanced transmission technologies and proactive planning for new transmission.</p>
+    </article>
+    <article class="card">
+      <h3>Community Engagement</h3>
+      <p class="muted">Ensuring a just transition that reflects the needs and concerns of those directly impacted by project development.</p>
+    </article>
+    <article class="card">
+      <h3>Energy Affordability</h3>
+      <p class="muted">Leveraging policy and market incentives to reduce the burden placed on ratepayers and taxpayers.</p>
+    </article>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="container">
+    
+    <p class="footer-note" style="text-align:center;margin:0.5rem 0 0.75rem;color:black;">
+      Like this website? Let me build one for your next campaign!
+      </p>
+    
+    <nav class="socials" aria-label="Social media">
+      <a class="social-link" href="https://www.linkedin.com/company/lumenergyllc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <img src="../assets/icons/linkedin.png" alt="LinkedIn" width="28" height="28">
+      </a>
+      <a class="social-link" href="https://x.com/lumenergyllc" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)">
+        <img src="../assets/icons/x.svg" alt="X" width="28" height="28">
+      </a>
+      <a class="social-link" href="https://bsky.app/profile/lumenergyllc.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">
+        <img src="../assets/icons/bluesky.svg" alt="Bluesky" width="28" height="28">
+      </a>
+      <a class="social-link" href="https://instagram.com/lumenergyllc" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <img src="../assets/icons/instagram.svg" alt="Instagram" width="28" height="28">
+      </a>
+      <a class="social-link" href="https://tiktok.com/@lumenergyllc" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <img src="../assets/icons/tiktok.svg" alt="TikTok" width="28" height="28">
+      </a>
+    </nav>
+    <div style="color:black;">&copy; <span id="year"></span> Lumenergy LLC. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+<script>
+(function() {
+  var current = location.pathname.replace(/\/index\.html$/,'').toLowerCase();
+  document.querySelectorAll('.nav-links a[href]').forEach(function(a){
+    try {
+      var p = new URL(a.getAttribute('href'), location.origin)
+                .pathname.replace(/\/index\.html$/,'').toLowerCase();
+      if (p === current) a.setAttribute('aria-current','page');
+    } catch (e) {}
+  });
+})();
+</script>
+
+</body>
+</html>
